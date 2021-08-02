@@ -19,17 +19,6 @@ $_SESSION["street"] = ($_POST['street']);
 $_SESSION["streetnumber"] = ($_POST['streetnumber']);
 $_SESSION["zipcode"] = ($_POST['zipcode']);
 
-// Setting a Cookie 
-
-// Storing Cookies
-$_COOKIE = [];
-if(isset($_POST['products'])){
-    setcookie("cookie", json_encode($product), time()+30*24*60*60);
-    echo "Cookie products set : " . ($_POST['products']);
-} else{
-    echo "Cookie storage failed";
-}
-
 // Use this function when you need to need an overview of these variables // FEEDBACK: TYPO
 function whatIsHappening() {
     echo '<pre>';
@@ -86,6 +75,7 @@ function handleForm($products)
         foreach ($invalidFields as $invalidField) {
             $message .= "please provide your {$invalidField}.";
             $message .= '<br>';
+
         }
 
         return [
@@ -108,13 +98,20 @@ function handleForm($products)
             'errors' => false, 
             'message' => $message
         ];
+        echo 'name';
     }
-}
+
+        if (!isset ($products[$productNumber]['name'])) {
+            setcookie ('name', strval($productNames), time() + ( 1 * 10 * 60 * 60));
+        } else {
+            $newName = $_COOKIE['name'] . ',' . $productNames;
+            setcookie ('name', $newName, time() + (10 * 66 * 24 * 60 * 60));
+        }
+    }
 
 // TODO: replace this if by an actual check
 $formSubmitted =  !empty($_POST);
 $result = [];
-
 if ($formSubmitted) {
     $result = handleForm($products);
 }
