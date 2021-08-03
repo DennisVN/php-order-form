@@ -20,7 +20,8 @@ $_SESSION["streetnumber"] = ($_POST['streetnumber']);
 $_SESSION["zipcode"] = ($_POST['zipcode']);
 
 // Use this function when you need to need an overview of these variables // FEEDBACK: TYPO
-function whatIsHappening() {
+function whatIsHappening() 
+{
     echo '<pre>';
     echo '<h2>$_GET</h2>';
     var_dump($_GET);
@@ -35,7 +36,8 @@ function whatIsHappening() {
 whatIsHappening();
 
 // TODO: provide some products (you may overwrite the example)
-$products = [
+$products = 
+[
     ['name' => 'Minecraft Platinum Trophy', 'price' => 999],
     ['name' => 'DOOM (2016) Platinum Trophy', 'price' => 999],
     ['name' => 'Dukem Nukem FOREVER Platinum Trophy', 'price' => 999],
