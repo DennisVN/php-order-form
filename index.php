@@ -1,9 +1,5 @@
 <?php
 
-// This file is your starting point (= since it's the index)
-// It will contain most of the logic, to prevent making a messy mix in the html
-
-// This line makes PHP behave in a more strict way
 declare(strict_types=1);
 
 ini_set('display_errors', '1');
