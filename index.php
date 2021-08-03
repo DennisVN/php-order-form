@@ -88,7 +88,7 @@ function handleForm($products)
     } else {
         $productNumbers= array_keys($_POST['products']);
         $productNames = [];
-        setcookie ('TestCookie', strval([$productNames]), time() + (60 * 60 * 24 * 30));
+        setcookie ('TestCookie', implode($productNames), time() + (60 * 60 * 24 * 30));
         echo $_COOKIE["TestCookie"];
         foreach ($productNumbers as $productNumber) {
             $productNames[] = $products[$productNumber]['name'];
