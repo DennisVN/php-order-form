@@ -88,6 +88,8 @@ function handleForm($products)
     } else {
         $productNumbers= array_keys($_POST['products']);
         $productNames = [];
+        setcookie ('TestCookie', strval([$productNames]), time() + (60 * 60 * 24 * 30));
+        echo $_COOKIE["TestCookie"];
         foreach ($productNumbers as $productNumber) {
             $productNames[] = $products[$productNumber]['name'];
         }
@@ -103,13 +105,7 @@ function handleForm($products)
         echo 'name';
     }
 
-        if (!isset ($products[$productNumber]['name'])) {
-            setcookie ('name', strval($productNames), time() + ( 1 * 10 * 60 * 60));
-        } else {
-            $newName = $_COOKIE['name'] . ',' . $productNames;
-            setcookie ('name', $newName, time() + (10 * 66 * 24 * 60 * 60));
-        }
-    }
+}
 
 // TODO: replace this if by an actual check
 $formSubmitted =  !empty($_POST);
