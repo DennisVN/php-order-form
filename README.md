@@ -33,3 +33,9 @@ All basic steps are completed ;
             - the form thus has been submitted.
             - take that input and put it through variable $result [].
             - declare that when your result from handleform($products) is passed, this gets saved in the variable $result. 
+
+### WIP
+    - return Cookies as a string 
+    - remove error messages after completion 
+    - fix color of bootstrap alert messages
+    - reformat main functions
