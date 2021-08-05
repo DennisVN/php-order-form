@@ -12,11 +12,11 @@
     <title>Your fancy store</title>
     <style> .form-row {border-radius: 10%;}</style>
 </head>
-<body style="background-color:pink;"> 
+<body> 
 <div class="container" style="font-family:courier;">
     <h1>Place your order</h1>
     <?php if (!empty($result['message'])) { ?>
-        <div class="alert <?php if (isset($result['errors'])) {echo 'alert-danger';} else {echo 'alert-success';} ?>">
+        <div class="alert <?php if (isset($result['errors'])) {echo 'alert';} else {echo 'alert-success';} ?>">
             <?= $result['message']?>
         </div>
     <?php }; ?> 

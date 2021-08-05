@@ -107,7 +107,7 @@ function handleForm($products)
         $message .= 'Your address : ' . $_POST['street'] . ' ' . $_POST['streetnumber'] . ', ' . $_POST['zipcode'] . ' ' . $_POST['city'];
         return [
             'errors' => false, 
-            'message' => $message
+            'message' => '<div class="alert alert-success">'. $message . '</div>'
         ];
         echo 'name';
     }
