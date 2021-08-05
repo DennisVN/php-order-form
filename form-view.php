@@ -20,6 +20,18 @@
             <?= $result['message']?>
         </div>
     <?php }; ?> 
+
+    <?php // Navigation for when you need it ?>
+    <nav>
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link active" href="?PHP=1">Order PHP Charms</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="?JS=1">Order JS Charms</a>
+            </li>
+        </ul>
+    </nav>
     
     <form method="post" >
         <div class="form-row">
