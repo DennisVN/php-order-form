@@ -9,6 +9,8 @@ error_reporting(E_ALL);
 // We are going to use session variables so we need to enable sessions
 session_start();
 
+require 'Products.php';
+
 // Storing session data (sensitive stuff)
 $_SESSION["email"] = ($_POST['email']);
 $_SESSION["street"] = ($_POST['street']);
@@ -31,13 +33,23 @@ function whatIsHappening()
 }
 whatIsHappening();
 
+$host = basename($_SERVER['REQUEST_URI']);
+if ($host == "?trphs=1")
+{
+    $products = [   
+        ['name' => 'Minecraft Platinum Trophy', 'price' => 999],
+        ['name' => 'DOOM (2016) Platinum Trophy', 'price' => 999],
+        ['name' => 'Dukem Nukem FOREVER Platinum Trophy', 'price' => 999],
+    ];
+} else {
+    $products = [
+        ['name' => 'Pokemon GO lvl 41 ', 'price' => 1000],
+        ['name' => 'COD Modern Warfare Damascus Camo', 'price' => 1000],
+        ['name' => 'COD Cold War Dark Matter Ultra Camo', 'price' => 1000],
+    ];
+}
+
 // TODO: provide some products (you may overwrite the example)
-$products = 
-[
-    ['name' => 'Minecraft Platinum Trophy', 'price' => 999],
-    ['name' => 'DOOM (2016) Platinum Trophy', 'price' => 999],
-    ['name' => 'Dukem Nukem FOREVER Platinum Trophy', 'price' => 999],
-];
 
 $totalValue = 0;
 
@@ -73,7 +85,6 @@ function handleForm($products)
         foreach ($invalidFields as $invalidField) {
             $message .= "please provide your {$invalidField}.";
             $message .= '<br>';
-
         }
 
         return [
@@ -84,7 +95,7 @@ function handleForm($products)
     } else {
         $productNumbers= array_keys($_POST['products']);
         $productNames = [];
-        setcookie ('TestCookie', implode($productNames), time() + (60 * 60 * 24 * 30));
+        setcookie ('TestCookie', implode(',', $productNames), time() + (60 * 60 * 24 * 30));
         echo $_COOKIE["TestCookie"];
         foreach ($productNumbers as $productNumber) {
             $productNames[] = $products[$productNumber]['name'];
