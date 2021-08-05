@@ -25,10 +25,10 @@
     <nav>
         <ul class="nav">
             <li class="nav-item">
-                <a class="nav-link active" href="?PHP=1">Order PHP Charms</a>
+                <a class="nav-link active" href="?trphs=1">Buy Trophies</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="?JS=1">Order JS Charms</a>
+                <a class="nav-link" href="?accnts=1">Buy Accounts</a>
             </li>
         </ul>
     </nav>
