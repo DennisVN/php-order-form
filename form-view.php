@@ -72,7 +72,7 @@
             <?php foreach ($products as $i => $product): ?>
                 <label>
 					    <?php // <?p= is equal to <?php echo ?>
-                    <input type="checkbox" value="1" <?php if(isset($_POST['products'][$i])) { foreach($_POST['products'] as $tmp) { if($tmp == "1") { echo "checked='checked'";}}} ?>  name="products[<?php echo $i ?>]"/> <?php echo $product['name'] ?> -
+                    <input type="checkbox" value="1" <?php if(isset($_POST['products'][$i])) { foreach($_POST['products'] as $tmp) { if($tmp == "1") { echo "checked=\'checked\'";}}} ?>  name="products[<?php echo $i ?>]"/> <?php echo $product['name'] ?> -
                     &euro; <?= number_format($product['price'], 2) ?> </label><br />
             <?php endforeach; ?>
         </fieldset>

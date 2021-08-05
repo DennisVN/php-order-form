@@ -35,7 +35,7 @@ whatIsHappening();
 
 $host = basename($_SERVER['REQUEST_URI']);
 if ($host == "?trphs=1")
-{
+{   
     $products = [   
         ['name' => 'Minecraft Platinum Trophy', 'price' => 999],
         ['name' => 'DOOM (2016) Platinum Trophy', 'price' => 999],
@@ -89,7 +89,7 @@ function handleForm($products)
 
         return [
             'errors' => true, 
-            'message' => $message 
+            'message' => '<div class="alert alert-danger">'. $message . '</div>', 
         ]; 
 
     } else {
