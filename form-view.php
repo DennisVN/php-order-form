@@ -12,7 +12,7 @@
     <title>Your fancy store</title>
     <style> .form-row {border-radius: 10%;}</style>
 </head>
-<body> 
+<body style= "background-color:pink;"> 
 <div class="container" style="font-family:courier;">
     <h1>Place your order</h1>
     <?php if (!empty($result['message'])) { ?>
@@ -72,15 +72,15 @@
             <?php foreach ($products as $i => $product): ?>
                 <label>
 					    <?php // <?p= is equal to <?php echo ?>
-                    <input type="checkbox" value="1" <?php if(isset($_POST['products'][$i])) { foreach($_POST['products'] as $tmp) { if($tmp == "1") { echo "checked=\'checked\'";}}} ?>  name="products[<?php echo $i ?>]"/> <?php echo $product['name'] ?> -
-                    &euro; <?= number_format($product['price'], 2) ?> </label><br />
+                    <input type="checkbox" value="1" <?php if(isset($_POST['products'][$i])) { foreach($_POST['products'] as $tmp) { if($tmp == "1") { echo "checked=\'checked\'";}}} ?>  name="products[<?php echo $i ?>]"/> <?php echo $product->name ?> -
+                    &euro; <?= number_format($product->price, 2) ?> </label><br />
             <?php endforeach; ?>
         </fieldset>
 
         <button type="submit" class="btn btn-primary">Order!</button>
     </form>
 
-    <footer>You already ordered <strong>&euro; <?php echo $totalValue ?></strong> in food and drinks.</footer>
+    <footer>You already ordered <strong>&euro; <?php echo $totalValue ?></strong> in some cool shit.</footer>
 </div>
 
 <style>

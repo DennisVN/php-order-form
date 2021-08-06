@@ -9,7 +9,7 @@ error_reporting(E_ALL);
 // We are going to use session variables so we need to enable sessions
 session_start();
 
-require 'Products.php';
+require 'products.php';
 
 // Storing session data (sensitive stuff)
 $_SESSION["email"] = ($_POST['email']);
@@ -37,15 +37,15 @@ $host = basename($_SERVER['REQUEST_URI']);
 if ($host == "?trphs=1")
 {   
     $products = [   
-        ['name' => 'Minecraft Platinum Trophy', 'price' => 999],
-        ['name' => 'DOOM (2016) Platinum Trophy', 'price' => 999],
-        ['name' => 'Dukem Nukem FOREVER Platinum Trophy', 'price' => 999],
+        new Product('Minecraft Platinum Trophy', 999),
+        new Product('DOOM (2016) Platinum Trophy', 999),
+        new Product('Dukem Nukem FOREVER Platinum Trophy', 999),
     ];
 } else {
     $products = [
-        ['name' => 'Pokemon GO lvl 41 ', 'price' => 1000],
-        ['name' => 'COD Modern Warfare Damascus Camo', 'price' => 1000],
-        ['name' => 'COD Cold War Dark Matter Ultra Camo', 'price' => 1000],
+        new Product('Pokemon GO lvl 41', 1000),
+        new Product('COD Modern Warfare Damascus Camo', 1000),
+        new Product('COD Cold War Dark Matter Ultra Camo', 1000),
     ];
 }
 
